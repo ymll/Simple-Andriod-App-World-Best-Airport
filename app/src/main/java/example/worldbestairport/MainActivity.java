@@ -151,6 +151,16 @@ public class MainActivity extends Activity
                             .commit();
                 }
             });
+            ImageButton btn2 = (ImageButton) rootView.findViewById(R.id.button2);
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    fragmentManager.beginTransaction()
+                            .replace(R.id.container, new BestAirline())
+                            .commit();
+                }
+            });
             return rootView;
         }
 

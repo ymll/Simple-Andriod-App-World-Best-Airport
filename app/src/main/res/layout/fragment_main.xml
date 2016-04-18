@@ -32,13 +32,18 @@
         android:layout_height="wrap_content"
         android:text="Best Airport"
         android:id="@+id/button"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/best_airport"
+        android:cropToPadding="false" />
 
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Best Airline"
         android:id="@+id/button2"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/best_airline" />
 
 </LinearLayout>
