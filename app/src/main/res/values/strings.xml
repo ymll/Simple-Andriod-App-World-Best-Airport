@@ -20,4 +20,23 @@
         <item>Munich Airport is the second busiest airport in Germany and the secondary hub for Lufthansa German Airlines. Munich Airport has connections to destinations all over the world, but much more besides. With over 150 retail stores and some 50 places where you can eat and drink, it’s like a city center, offering travelers and visitors plenty to see and do.</item>
     </string-array>
 
+    <string-array
+        name="airlines2015">
+        <item>1. QATAR AIRWAYS</item>
+		<item>In a relatively short time, Qatar Airways has grown to more than 140 destinations worldwide, offering levels of service excellence that helped the award-winning carrier to become best in the world. Qatar Airways network spans business and leisure destinations across Europe, Middle East, Africa, Asia Pacific, North America and South America. Qatar Airways is a member of oneworld global airline alliance </item>
+		<item>2. SINGAPORE AIRLINES </item>
+		<item>Singapore Airlines is one of the most respected travel brands around the world. Flying one of the youngest aircraft fleets in the world to destinations spanning a network spread over six continents, the Singapore Girl is an internationally-recognisable icon providing the high standards of care and service that customers have come to expect of Singapore Airlines. </item>
+		<item>3. CATHAY PACIFIC AIRWAYS </item>
+		<item>Voted Airline of the Year 2014, Cathay Pacific Airways has won the \'World\'s Best Airline\' award for the fourth time, more than any other airline. Cathay Pacific is a member of the oneworld global airline alliance. The Cathay Pacific Group, including Dragonair and Air Hong Kong, operate more than 150 aircraft to 130 destinations across the globe. </item>
+    </string-array>
+
+    <string-array
+        name="airlines2014">
+        <item>1. CATHAY PACIFIC AIRWAYS </item>
+		<item>Voted Airline of the Year 2014, Cathay Pacific Airways has won the \'World\'s Best Airline\' award for the fourth time, more than any other airline. Cathay Pacific is a member of the oneworld global airline alliance. The Cathay Pacific Group, including Dragonair and Air Hong Kong, operate more than 150 aircraft to 130 destinations across the globe. </item>
+        <item>2. QATAR AIRWAYS</item>
+		<item>In a relatively short time, Qatar Airways has grown to more than 140 destinations worldwide, offering levels of service excellence that helped the award-winning carrier to become best in the world. Qatar Airways network spans business and leisure destinations across Europe, Middle East, Africa, Asia Pacific, North America and South America. Qatar Airways is a member of oneworld global airline alliance </item>
+		<item>3. SINGAPORE AIRLINES </item>
+		<item>Singapore Airlines is one of the most respected travel brands around the world. Flying one of the youngest aircraft fleets in the world to destinations spanning a network spread over six continents, the Singapore Girl is an internationally-recognisable icon providing the high standards of care and service that customers have come to expect of Singapore Airlines. </item>
+    </string-array>
 </resources>
