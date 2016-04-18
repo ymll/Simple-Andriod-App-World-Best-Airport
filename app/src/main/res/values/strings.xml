@@ -10,4 +10,14 @@
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
 
+    <string-array
+        name="airports">
+        <item>SINGAPORE CHANGI AIRPORT</item>
+        <item>Singapore Changi Airport connects customers to over 200 destinations worldwide, with 5000 arrivals and departures a week by 80 international airlines. </item>
+        <item>INCHEON INT'L AIRPORT</item>
+        <item>Incheon International Airport is the largest airport in South Korea and one of the busiest airports in the world. It is a former winner of the Airport of the Year title at the World Airport Awards.</item>
+        <item>MUNICH AIRPORT</item>
+        <item>Munich Airport is the second busiest airport in Germany and the secondary hub for Lufthansa German Airlines. Munich Airport has connections to destinations all over the world, but much more besides. With over 150 retail stores and some 50 places where you can eat and drink, it’s like a city center, offering travelers and visitors plenty to see and do.</item>
+    </string-array>
+
 </resources>
