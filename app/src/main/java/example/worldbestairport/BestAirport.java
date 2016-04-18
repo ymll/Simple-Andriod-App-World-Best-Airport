@@ -1,5 +1,6 @@
 package example.worldbestairport;
 
+import android.app.ActionBar;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +14,7 @@ public class BestAirport extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.bestairportlayout, container, false);
+        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.title_section2));
         return rootView;
-
     }
 }
