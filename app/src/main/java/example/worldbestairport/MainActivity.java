@@ -3,9 +3,11 @@ package example.worldbestairport;
 import android.app.Activity;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -124,12 +126,31 @@ public class MainActivity extends Activity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_close) {
-            Toast.makeText(this, "App is closed", Toast.LENGTH_SHORT).show();
-            finish();
+            showExitConfirmDialog();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showExitConfirmDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Are you sure?");
+        builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                Toast.makeText(MainActivity.this, "App is closed", Toast.LENGTH_SHORT).show();
+                finishAffinity();
+            }
+        });
+        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
     }
 
     /**
