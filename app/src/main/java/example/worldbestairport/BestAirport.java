@@ -1,6 +1,7 @@
 package example.worldbestairport;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -27,10 +28,15 @@ public class BestAirport extends Fragment {
         setOnClickListenerForYearButton(btn2015, rootView, R.array.airports2015);
         setOnClickListenerForYearButton(btn2014, rootView, R.array.airports2014);
 
-        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.title_section2));
         btn2016.performClick();
 
         return rootView;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        ((MainActivity) activity).onSectionAttached(1);
     }
 
     private void setOnClickListenerForYearButton(Button button, final View rootView, final int dataResourceId) {

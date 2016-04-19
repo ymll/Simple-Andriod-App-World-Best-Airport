@@ -28,10 +28,15 @@ public class BestAirline extends Fragment {
         setOnClickListenerForYearButton(btn2015, rootView, R.array.airlines2015);
         setOnClickListenerForYearButton(btn2014, rootView, R.array.airlines2014);
 
-        ((MainActivity) getActivity()).setActionBarTitle(getString(R.string.title_section3));
         btn2016.performClick();
 
         return rootView;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        ((MainActivity) activity).onSectionAttached(2);
     }
 
     private void setOnClickListenerForComingYearButton(Button button, final View rootView) {
