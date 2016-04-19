@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">World Best Airport</string>
+    <string name="preference_user_name">USER_NAME</string>
     <string name="title_section1">Home</string>
     <string name="title_section2">Best Airport</string>
     <string name="title_section3">Best Airline</string>
