@@ -2,12 +2,71 @@
 <resources>
 
     <string name="app_name">World Best Airport</string>
+    <string name="preference_user_name">USER_NAME</string>
     <string name="title_section1">Home</string>
     <string name="title_section2">Best Airport</string>
     <string name="title_section3">Best Airline</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_example">Example action</string>
+    <string name="action_close">Close</string>
     <string name="action_settings">Settings</string>
 
+    <string-array
+        name="airports2016">
+        <item>Winners in 2016</item>
+        <item>1. SINGAPORE CHANGI AIRPORT</item>
+        <item>Singapore Changi Airport connects customers to over 200 destinations worldwide, with 5000 arrivals and departures a week by 80 international airlines. </item>
+        <item>2. INCHEON INT\'L AIRPORT</item>
+        <item>Incheon International Airport is the largest airport in South Korea and one of the busiest airports in the world. It is a former winner of the Airport of the Year title at the World Airport Awards.</item>
+        <item>3. MUNICH AIRPORT</item>
+        <item>Munich Airport is the second busiest airport in Germany and the secondary hub for Lufthansa German Airlines. Munich Airport has connections to destinations all over the world, but much more besides. With over 150 retail stores and some 50 places where you can eat and drink, it’s like a city center, offering travelers and visitors plenty to see and do.</item>
+        <item>4. TOKYO INT\'L AIRPORT HANEDA</item>
+        <item>Boasting both domestic and international terminals, Tokyo International Airport Haneda plays a very important role in furthering Japan’s development as a tourism-oriented nation</item>
+    </string-array>
+
+    <string-array
+        name="airports2015">
+        <item>Winners in 2015</item>
+        <item>1. SINGAPORE CHANGI AIRPORT</item>
+        <item>Singapore Changi Airport connects customers to over 200 destinations worldwide, with 5000 arrivals and departures a week by 80 international airlines. </item>
+        <item>2. INCHEON INT\'L AIRPORT</item>
+        <item>Incheon International Airport is the largest airport in South Korea and one of the busiest airports in the world. It is a former winner of the Airport of the Year title at the World Airport Awards.</item>
+        <item>3. MUNICH AIRPORT</item>
+        <item>Munich Airport is the second busiest airport in Germany and the secondary hub for Lufthansa German Airlines. Munich Airport has connections to destinations all over the world, but much more besides. With over 150 retail stores and some 50 places where you can eat and drink, it’s like a city center, offering travelers and visitors plenty to see and do.</item>
+        <item>4. HONG KONG INT\'L AIRPORT</item>
+        <item>Hong Kong International Airport serves over 100 airlines operating flights to about 180 locations worldwide, including 44 destinations on the Chinese Mainland. It is a former, multiple winner of the Airport of the Year title at the World Airport Awards.</item>
+    </string-array>
+
+    <string-array
+        name="airports2014">
+        <item>Winners in 2014</item>
+        <item>1. SINGAPORE CHANGI AIRPORT</item>
+        <item>Singapore Changi Airport connects customers to over 200 destinations worldwide, with 5000 arrivals and departures a week by 80 international airlines. </item>
+        <item>2. INCHEON INT\'L AIRPORT</item>
+        <item>Incheon International Airport is the largest airport in South Korea and one of the busiest airports in the world. It is a former winner of the Airport of the Year title at the World Airport Awards.</item>
+        <item>3. MUNICH AIRPORT</item>
+        <item>Munich Airport is the second busiest airport in Germany and the secondary hub for Lufthansa German Airlines. Munich Airport has connections to destinations all over the world, but much more besides. With over 150 retail stores and some 50 places where you can eat and drink, it’s like a city center, offering travelers and visitors plenty to see and do.</item>
+        <item>4. HONG KONG INT\'L AIRPORT</item>
+        <item>Hong Kong International Airport serves over 100 airlines operating flights to about 180 locations worldwide, including 44 destinations on the Chinese Mainland. It is a former, multiple winner of the Airport of the Year title at the World Airport Awards.</item>
+    </string-array>
+
+    <string-array
+        name="airlines2015">
+        <item>1. QATAR AIRWAYS</item>
+		<item>In a relatively short time, Qatar Airways has grown to more than 140 destinations worldwide, offering levels of service excellence that helped the award-winning carrier to become best in the world. Qatar Airways network spans business and leisure destinations across Europe, Middle East, Africa, Asia Pacific, North America and South America. Qatar Airways is a member of oneworld global airline alliance </item>
+		<item>2. SINGAPORE AIRLINES </item>
+		<item>Singapore Airlines is one of the most respected travel brands around the world. Flying one of the youngest aircraft fleets in the world to destinations spanning a network spread over six continents, the Singapore Girl is an internationally-recognisable icon providing the high standards of care and service that customers have come to expect of Singapore Airlines. </item>
+		<item>3. CATHAY PACIFIC AIRWAYS </item>
+		<item>Voted Airline of the Year 2014, Cathay Pacific Airways has won the \'World\'s Best Airline\' award for the fourth time, more than any other airline. Cathay Pacific is a member of the oneworld global airline alliance. The Cathay Pacific Group, including Dragonair and Air Hong Kong, operate more than 150 aircraft to 130 destinations across the globe. </item>
+    </string-array>
+
+    <string-array
+        name="airlines2014">
+        <item>1. CATHAY PACIFIC AIRWAYS </item>
+		<item>Voted Airline of the Year 2014, Cathay Pacific Airways has won the \'World\'s Best Airline\' award for the fourth time, more than any other airline. Cathay Pacific is a member of the oneworld global airline alliance. The Cathay Pacific Group, including Dragonair and Air Hong Kong, operate more than 150 aircraft to 130 destinations across the globe. </item>
+        <item>2. QATAR AIRWAYS</item>
+		<item>In a relatively short time, Qatar Airways has grown to more than 140 destinations worldwide, offering levels of service excellence that helped the award-winning carrier to become best in the world. Qatar Airways network spans business and leisure destinations across Europe, Middle East, Africa, Asia Pacific, North America and South America. Qatar Airways is a member of oneworld global airline alliance </item>
+		<item>3. SINGAPORE AIRLINES </item>
+		<item>Singapore Airlines is one of the most respected travel brands around the world. Flying one of the youngest aircraft fleets in the world to destinations spanning a network spread over six continents, the Singapore Girl is an internationally-recognisable icon providing the high standards of care and service that customers have come to expect of Singapore Airlines. </item>
+    </string-array>
 </resources>

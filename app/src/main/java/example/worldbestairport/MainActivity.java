@@ -3,9 +3,12 @@ package example.worldbestairport;
 import android.app.Activity;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -17,7 +20,11 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity
@@ -49,26 +56,82 @@ public class MainActivity extends Activity
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        askForUserName();
+    }
+
+    private void askForUserName() {
+        final String key = getString(R.string.preference_user_name);
+        final SharedPreferences sharedPref = getSharedPreferences(
+                key, Context.MODE_PRIVATE);
+
+        String userName = sharedPref.getString(key, null);
+        if(userName == null || userName.length() == 0) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            final EditText editText = new EditText(this);
+
+            editText.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT));
+
+            builder.setTitle("What is your name?");
+            builder.setView(editText);
+            builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (editText.getText().length() > 0) {
+                        String userName = editText.getText().toString();
+                        dialog.dismiss();
+                        sharedPref.edit().putString(key, userName).apply();
+                        Toast.makeText(MainActivity.this, "Welcome, " + userName + "!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+            builder.create().show();
+        } else {
+            Toast.makeText(this, "Welcome back, " + userName + "!", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
+        Fragment selectedFragment;
+        switch(position) {
+            case 0:
+                selectedFragment = new PlaceholderFragment();
+                break;
+            case 1:
+                selectedFragment = new BestAirport();
+                break;
+            case 2:
+                selectedFragment = new BestAirline();
+                break;
+            default:
+                return;
+        }
+
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                .replace(R.id.container, selectedFragment)
                 .commit();
     }
 
     public void onSectionAttached(int number) {
         switch (number) {
-            case 1:
+            case 0:
                 mTitle = getString(R.string.title_section1);
                 break;
-            case 2:
+            case 1:
                 mTitle = getString(R.string.title_section2);
                 break;
-            case 3:
+            case 2:
                 mTitle = getString(R.string.title_section3);
                 break;
         }
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(mTitle);
     }
 
     public void restoreActionBar() {
@@ -78,6 +141,10 @@ public class MainActivity extends Activity
         actionBar.setTitle(mTitle);
     }
 
+    public void setActionBarTitle (CharSequence title) {
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(title);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -100,50 +167,55 @@ public class MainActivity extends Activity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_close) {
+            showExitConfirmDialog();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+    private void showExitConfirmDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Are you sure?");
+        builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                Toast.makeText(MainActivity.this, "App is closed", Toast.LENGTH_SHORT).show();
+                finishAffinity();
+            }
+        });
+        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public PlaceholderFragment() {
-        }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            Button btn = (Button) rootView.findViewById(R.id.button);
+            ImageButton btn = (ImageButton) rootView.findViewById(R.id.button);
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    FragmentManager fragmentManager = getFragmentManager();
-                    fragmentManager.beginTransaction()
-                            .replace(R.id.container, new BestAirport())
-                            .commit();
+                    ((MainActivity)getActivity()).onNavigationDrawerItemSelected(1);
+                }
+            });
+            ImageButton btn2 = (ImageButton) rootView.findViewById(R.id.button2);
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ((MainActivity)getActivity()).onNavigationDrawerItemSelected(2);
                 }
             });
             return rootView;
@@ -152,8 +224,7 @@ public class MainActivity extends Activity
         @Override
         public void onAttach(Activity activity) {
             super.onAttach(activity);
-            ((MainActivity) activity).onSectionAttached(
-                    getArguments().getInt(ARG_SECTION_NUMBER));
+            ((MainActivity) activity).onSectionAttached(0);
         }
     }
 
